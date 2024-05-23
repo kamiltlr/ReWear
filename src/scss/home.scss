@@ -74,12 +74,13 @@
     max-width: 275px;
     background-color: white;
     border: 1px solid $grey-color;
-    color: $grey-color;
-    padding: 15px 45px;
+    color: $black-color;
+    padding: 12px 38px;
     margin: 20px;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.7em;
+    font-size: 1.85em;
+    font-weight: 300;
 }
 
 .columns {
@@ -156,10 +157,48 @@
     max-width: 275px;
     background-color: white;
     border: 1px solid $grey-color;
-    color: $grey-color;
-    padding: 13px 45px;
+    color: $black-color;
+    padding: 10px 38px;
     margin: 20px;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.7em;
+    font-size: 1.85em;
+    font-weight: 300;
+}
+
+.us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.us-text {
+    text-align: center;
+    background-color: $white-color;
+    padding: 140px 140px 140px 100px;
+    color: $black-color;
+}
+
+.us-text h1 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.us-text p {
+    text-align: center;
+    font-size: 1.5em;
+   max-width: 980px;
+}
+
+.us-signature {
+    position: relative;
+    left: 40%;
+}
+
+.us-img {
+    overflow: hidden;
+}
+
+.us-img img {
+    max-width: 140%;
 }
