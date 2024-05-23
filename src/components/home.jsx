@@ -3,7 +3,8 @@ import React from 'react';
 import HomeHeader from './HomeHeader';
 import HomeNavigation from './HomeNavigation';
 import HomeMain from './HomeMain';
-import HomeThreeColumns from './HomeThreeColumns'
+import HomeThreeColumns from './HomeThreeColumns';
+import HomeSimpleSteps from './HomeSimpleSteps';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <HomeNavigation />
       <HomeMain />
       <HomeThreeColumns />
+      <HomeSimpleSteps />
     </div>
   );
 }
