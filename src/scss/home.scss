@@ -1,5 +1,5 @@
 .hero-img {
-    height: 805px;
+    height: 815px;
     background-image: url(../assets/Home-Hero-Image.jpg);
     background-size: 75%;
     background-repeat: no-repeat;
@@ -85,7 +85,7 @@
 .columns {
     display: flex;
     justify-content: center;
-    margin: 215px 0;
+    margin: 213px 0 0;
     background-color: $yellow-color;
 }
 
@@ -93,7 +93,7 @@
     text-align: center;
     color: $black-color;
     font-weight: lighter;
-    padding: 25px 80px;
+    padding: 65px 80px;
 }
 
 .columns-text h1 {
@@ -110,4 +110,56 @@
 
 .columns-text span {
     max-width: 100px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+
+.about-text {
+    margin: 30px;
+    text-align: center;
+}
+
+.about-text h1 {
+    font-weight: 400;
+}
+
+.about-columns {
+    display: flex;
+    margin: 0;
+    padding: 50px 280px;
+    gap: 100px;
+    background-color: $white-color;
+}
+
+.about-column {
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.about-column p {
+    margin: 0;
+}
+
+.about-column span {
+    font-size: 0.75em;
+}
+
+.about-button {
+    margin: 20px 0 50px;
+}
+
+.about-btn {
+    max-width: 275px;
+    background-color: white;
+    border: 1px solid $grey-color;
+    color: $grey-color;
+    padding: 13px 45px;
+    margin: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.7em;
 }
