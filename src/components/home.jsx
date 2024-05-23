@@ -5,6 +5,7 @@ import HomeNavigation from './HomeNavigation';
 import HomeMain from './HomeMain';
 import HomeThreeColumns from './HomeThreeColumns';
 import HomeSimpleSteps from './HomeSimpleSteps';
+import HomeUs from './HomeUs';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <HomeMain />
       <HomeThreeColumns />
       <HomeSimpleSteps />
+      <HomeUs />
     </div>
   );
 }
