@@ -1,8 +1,5 @@
-;.hero-container {
-    height: 805px;
-}
-
 .hero-img {
+    height: 805px;
     background-image: url(../assets/Home-Hero-Image.jpg);
     background-size: 75%;
     background-repeat: no-repeat;
@@ -18,13 +15,13 @@
 
 .hero-buttons a {
     text-decoration: none;
-    color: $four-color;
+    color: $grey-color;
     padding: 8px 8px;
     border: 1px solid #FFFFFF;
 }
 
 .hero-buttons a:hover {
-   border: 1px solid $third-color;
+   border: 1px solid $yellow-color;
 }
 
 .navigation {
@@ -76,11 +73,41 @@
 .main-btn {
     max-width: 275px;
     background-color: white;
-    border: 1px solid $four-color;
-    color: $four-color;
+    border: 1px solid $grey-color;
+    color: $grey-color;
     padding: 15px 45px;
     margin: 20px;
     text-transform: uppercase;
     text-align: center;
     font-size: 1.7em;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    margin: 215px 0;
+    background-color: $yellow-color;
+}
+
+.columns-text {
+    text-align: center;
+    color: $black-color;
+    font-weight: lighter;
+    padding: 25px 80px;
+}
+
+.columns-text h1 {
+    margin: 1px;
+    font-size: 4em;
+    font-weight: 300;
+}
+
+.columns-text p {
+    text-transform: uppercase;
+    margin: 15px;
+    font-weight: 400;
+}
+
+.columns-text span {
+    max-width: 100px;
 }
