@@ -6,6 +6,7 @@ import HomeMain from './HomeMain';
 import HomeThreeColumns from './HomeThreeColumns';
 import HomeSimpleSteps from './HomeSimpleSteps';
 import HomeUs from './HomeUs';
+import HomeWhoWeHelp from './HomeWhoWeHelp';
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <HomeThreeColumns />
       <HomeSimpleSteps />
       <HomeUs />
+      <HomeWhoWeHelp />
     </div>
   );
 }
