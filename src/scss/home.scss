@@ -315,3 +315,142 @@
     background-color: white;
     border: 1px solid $grey-color;
 }
+
+
+.contact {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    max-height: 800px;
+  }
+  
+  .contact-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 28%; 
+    padding-bottom: 55px;
+  }
+  
+  .contact-hero h1 {
+    font-size: 1.85em;
+    font-weight: 400;
+    color: $black-color; 
+  }
+  
+  .contact-hero img {
+    max-width: 70%;
+  }
+  
+  .contact-img img {
+    width: 115%;
+    opacity: 0.2;
+  }
+  
+  .contact-form {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(30%, -70%);
+    padding: 20px;
+    max-width: 80%; 
+    max-width: 600px; 
+  }
+  
+  
+  .form-container textarea,
+  .form-container input {
+    background-color: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid $grey-color;
+    overflow: hidden;
+    resize: none;
+    margin-top: 5px;
+  }
+  
+  .form-text {
+    display: flex;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  
+  .form-email {
+    position: relative;
+    right: 65px;
+  }
+  
+  .form-login input,
+  .form-email input {
+    width: 210px;
+    height: 30px;
+  }
+  
+  .form-login input::placeholder,
+  .form-email input::placeholder {
+    color: $white-color; 
+    font-size: 1.15em;
+    font-weight: 500;
+  }
+  
+  .form-message {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  
+  .form-message textarea {
+    height: 95px;
+  }
+  
+  .form-message textarea::placeholder {
+    color: $white-color; 
+    font-size: 1.1em;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  
+  .form-btn {
+    position: relative;
+    left: 52%; 
+    background-color: #fff;
+    border: 1px solid $grey-color; 
+    color: $black-color; 
+    padding: 8px 38px;
+    margin: 20px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+  }
+  
+  
+  .footer-text {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    transform: translate(-325%, 755%);
+    text-align: center;
+    width: 200px;
+    font-size: 0.95em;
+    font-weight: 400;
+  }
+  
+  .footer-media {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    transform: translate(15%, 1155%);
+  }
+
+  .footer-media img {
+    max-width: 15%;
+  }
+
+
