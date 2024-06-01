@@ -1,13 +1,41 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function HomeContact() {
+const validateForm = (formData) => {
+  const errors = {};
+  
+  if (!formData.name.trim()) {
+    errors.name = 'Pole nie może być puste';
+  } else if (formData.name.split(' ').length > 1) {
+    errors.name = 'Imię powinno być jednym wyrazem';
+  }
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!formData.email.trim()) {
+    errors.email = 'Pole nie może być puste';
+  } else if (!emailRegex.test(formData.email)) {
+    errors.email = 'Email powinien być poprawny';
+  }
+  
+  if (!formData.message.trim()) {
+    errors.message = 'Pole nie może być puste';
+  } else if (formData.message.length < 120) {
+    errors.message = 'Wiadomość musi mieć conajmniej 120 znaków';
+  }
+  
+  return errors;
+};
+
+const HomeContact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -15,12 +43,52 @@ function HomeContact() {
       ...formData,
       [name]: value
     });
+
+    const updatedErrors = { ...errors };
+    const fieldErrors = validateForm({ ...formData, [name]: value });
+    
+    if (fieldErrors[name]) {
+      updatedErrors[name] = fieldErrors[name];
+    } else {
+      delete updatedErrors[name];
+    }
+
+    setErrors(updatedErrors);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    navigate('/thank-you');
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const response = await axios.post('https://fer-api.coderslab.pl/v1/portfolio/contact', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.data.status === 'success') {
+        setSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        setErrors({});
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        setErrors(error.response.data.errors);
+      } else {
+        console.error('Unexpected error:', error);
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,6 +103,8 @@ function HomeContact() {
           <img src='../src/assets/Decoration.svg' alt='decoration' />
         </div>
 
+        {success && <p className='form-success'>Wiadomość została wysłana! Wkrótce się skontaktujemy.</p>}
+
         <form onSubmit={handleFormSubmit} className='form-container'>
           <div className='form-text'>
             <div className='form-login'>
@@ -47,7 +117,9 @@ function HomeContact() {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
+                className={errors.name ? 'input-error-name' : ''}
               />
+              {errors.name && <p className='form-error'>{errors.name}</p>}
             </div>
 
             <div className='form-email'>
@@ -60,7 +132,9 @@ function HomeContact() {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
+                className={errors.email ? 'input-error-email' : ''}
               />
+              {errors.email && <p className='form-error'>{errors.email}</p>}
             </div>
           </div>
 
@@ -73,10 +147,14 @@ function HomeContact() {
               value={formData.message}
               onChange={handleInputChange}
               required
+              className={errors.message ? 'input-error-message' : ''}
             />
+            {errors.message && <p className='form-error'>{errors.message}</p>}
           </div>
 
-          <button type='submit' className='form-btn'>Wyślij</button>
+          <button type='submit' className='form-btn'>
+            Wyślij
+          </button>
         </form>
       </div>
 
@@ -94,6 +172,6 @@ function HomeContact() {
       </footer>
     </div>
   );
-}
+};
 
 export default HomeContact;
