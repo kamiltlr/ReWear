@@ -416,6 +416,37 @@
     line-height: 1.2;
     font-weight: 500;
   }
+
+  .form-error {
+    color: red;
+    font-size: 0.9em;
+  }
+
+  .input-error {
+    border-bottom: 2px solid red;
+  }
+  
+  .form-login .input-error-name {
+    border-bottom: 2px solid red;
+  }
+  
+  .form-email .input-error-email {
+    border-bottom: 2px solid red;
+  }
+  
+  .form-message .input-error-message {
+    border-bottom: 2px solid red;
+  }
+  
+
+  .form-success {
+    transform: translate(35%, -75%);
+    margin: 0;
+    max-width: 250px;
+    text-align: center;
+    font-weight: 700;
+    color: forestgreen;
+  }
   
   .form-btn {
     position: relative;
@@ -428,6 +459,7 @@
     text-align: center;
     font-size: 1em;
     font-weight: 400;
+    max-width: 120px;
   }
   
   
