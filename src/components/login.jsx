@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './Firebase';
 
 const validateForm = (formData) => {
   const errors = {};
-  
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!formData.email.trim()) {
     errors.email = 'Pole nie może być puste';
   } else if (!emailRegex.test(formData.email)) {
     errors.email = 'Podany email jest nieprawidłowy!';
   }
-  
+
   if (!formData.password.trim()) {
     errors.password = 'Pole nie może być puste';
   } else if (formData.password.length < 6) {
     errors.password = 'Podane hasło jest za krótkie!';
   }
-  
+
   return errors;
 };
 
@@ -27,6 +29,7 @@ const Login = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +40,7 @@ const Login = () => {
 
     const updatedErrors = { ...errors };
     const fieldErrors = validateForm({ ...formData, [name]: value });
-    
+
     if (fieldErrors[name]) {
       updatedErrors[name] = fieldErrors[name];
     } else {
@@ -54,6 +57,13 @@ const Login = () => {
       setErrors(validationErrors);
       return;
     }
+
+    try {
+      await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      navigate('/');
+    } catch (error) {
+      console.error("Error logging in: ", error);
+    }
   };
 
   return (
@@ -65,22 +75,22 @@ const Login = () => {
 
       <form onSubmit={handleFormSubmit}>
         <div className="login-form">
-          <div className="login-email">
-            <label htmlFor="email">Email</label>
+          <div className='login-email'>
+            <label htmlFor='email'>Email</label>
             <input 
-              type="email"
-              id="email"
-              name="email"
+              type='email'
+              id='email'
+              name='email'
               value={formData.email}
               onChange={handleInputChange}
               required
               className={errors.email ? 'input-error-email' : ''}
             />
-            {errors.email && <p className="login-error">{errors.email}</p>}
+            {errors.email && <p className='login-error'>{errors.email}</p>}
           </div>
 
-          <div className="login-password">
-            <label htmlFor="password">Hasło</label>
+          <div className='login-password'>
+            <label htmlFor='password'>Hasło</label>
             <input
               type="password"
               id="password"
@@ -90,13 +100,13 @@ const Login = () => {
               required
               className={errors.password ? 'input-error-password' : ''}
             />
-            {errors.password && <p className="login-error">{errors.password}</p>}
+            {errors.password && <p className='login-error'>{errors.password}</p>}
           </div>
         </div>
 
         <div className="login-buttons">
           <Link to="/rejestracja" className="register-btn">Załóż konto</Link>
-          <button type="submit" className="login-btn">Zaloguj się</button>
+          <button type="submit" className='login-btn'>Zaloguj się</button>
         </div>
       </form>
     </div>
