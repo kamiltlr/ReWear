@@ -12,8 +12,10 @@ body {
 .hero-buttons {
     display: flex;
     justify-content: end;
+    align-items: center;
     margin: 20px 94px 3px;
-    font-size: 0.80em;
+    font-size: 0.75em;
+    gap: 15px;
 }
 
 .hero-buttons a {
@@ -23,8 +25,18 @@ body {
     border: 1px solid #FFFFFF;
 }
 
-.hero-buttons a:hover {
-   border: 1px solid $yellow-color;
+.hero-buttons .hero-register {
+  border: 1px solid $yellow-color;
+}
+
+.hero-buttons .hero-btn {
+  border: 2px solid $yellow-color;
+  color: $black-color;
+  font-weight: 600;
+}
+
+.hero-account {
+  font-weight: 500;
 }
 
 .navigation {
@@ -42,7 +54,7 @@ body {
     border: 1px solid #FFFFFF;
 }
 
-.navi-btn:hover {
+.navi-btn-main {
     border: 1px solid black;
 }
 
@@ -217,7 +229,7 @@ body {
 
 .foundation-text {
     position: relative;
-    left: 0.5%;
+    left: 0.7%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -262,7 +274,7 @@ body {
     max-width: 555px;
     margin-bottom: 60px;
     position: relative;
-    left: 32%;
+    left: 32.4%;
     text-align: center;
     font-size: 1.2em;
 }
@@ -578,18 +590,18 @@ body {
     font-weight: 400;
   }
 
-  .register-error {
+  .login-error {
     color: red;
     font-size: 0.9em;
     margin: 0;
   }
 
-  .register-email .input-error-email {
+  .login-email .input-error-email {
     border-bottom: 2px solid red;
     margin: 0;
   }
   
-  .register-password .input-error-password {
+  .login-password .input-error-password {
     border-bottom: 2px solid red;
     margin: 0;
   }
@@ -617,7 +629,7 @@ body {
 
   .register-text img {
     width: 90%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .register-form {
@@ -625,7 +637,8 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: $white-color;
-    padding: 50px 15px;
+    padding: 45px 0;
+    max-width: 400px;
   }
 
   .register-email {
