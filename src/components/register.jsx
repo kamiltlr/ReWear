@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './Firebase';
 
 const validateForm = (formData) => {
   const errors = {};
-  
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!formData.email.trim()) {
     errors.email = 'Pole nie może być puste';
   } else if (!emailRegex.test(formData.email)) {
     errors.email = 'Podany email jest nieprawidłowy!';
   }
-  
+
   if (!formData.password.trim()) {
     errors.password = 'Pole nie może być puste';
   } else if (formData.password.length < 6) {
@@ -24,7 +26,7 @@ const validateForm = (formData) => {
   } else if (formData.password !== formData.password2) {
     errors.password2 = 'Hasła muszą być takie same!';
   }
-  
+
   return errors;
 };
 
@@ -32,10 +34,11 @@ const Register = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    password2: '' 
+    password2: ''
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -46,7 +49,7 @@ const Register = () => {
 
     const updatedErrors = { ...errors };
     const fieldErrors = validateForm({ ...formData, [name]: value });
-    
+
     if (fieldErrors[name]) {
       updatedErrors[name] = fieldErrors[name];
     } else {
@@ -62,6 +65,13 @@ const Register = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
+    }
+
+    try {
+      await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      navigate('/');
+    } catch (error) {
+      console.error("Error creating user: ", error);
     }
   };
 
@@ -102,7 +112,7 @@ const Register = () => {
             {errors.password && <p className="register-error">{errors.password}</p>}
           </div>
 
-          <div className="register-password2">
+          <div className="register-password">
             <label htmlFor="password2">Powtórz hasło</label>
             <input
               type="password"
