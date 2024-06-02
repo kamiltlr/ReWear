@@ -7,7 +7,7 @@ function HomeNavigation() {
       <div className='navigation-columns'>
         <div className="navigation-btn-container">
           <Link to="start" smooth={true} duration={500}>
-            <button className='navi-btn'>Start</button>
+            <button className='navi-btn navi-btn-main'>Start</button>
           </Link>
 
           <Link to="about" smooth={true} duration={500}>
