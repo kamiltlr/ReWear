@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 function HomeHeader() {
   return (
     <div className="hero-buttons">
-    <Link to="/login" className="login-button">Zaloguj</Link>
-    <Link to="/register" className="login-button">Załóż konto</Link>
+    <Link to="/logowanie" className="login-button">Zaloguj</Link>
+    <Link to="/rejestracja" className="login-button">Załóż konto</Link>
   </div>
   );
 }
