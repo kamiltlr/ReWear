@@ -10,6 +10,7 @@ import HomeWhoWeHelp from './HomeWhoWeHelp';
 import HomeContact from './HomeContact';
 import Login from './Login';
 import Register from './Register';
+import Logout from './Logout';
 
 function Home() {
   return (
@@ -27,14 +28,19 @@ function Home() {
             </div>
           </Layout>
         } />
-        <Route path="/login" element={
+        <Route path="/logowanie" element={
           <Layout>
             <Login />
           </Layout>
         } />
-        <Route path="/register" element={
+        <Route path="/rejestracja" element={
           <Layout>
             <Register />
+          </Layout>
+        } />
+        <Route path="/wylogowano" element={
+          <Layout>
+            <Logout />
           </Layout>
         } />
       </Routes>
