@@ -118,7 +118,7 @@ const Register = () => {
         </div>
 
         <div className="register-buttons">
-          <Link to="/login" className="login-btn2">Zaloguj się</Link>
+          <Link to="/logowanie" className="login-btn2">Zaloguj się</Link>
           <button type="submit" className="register-btn2">Załóż konto</button>
         </div>
       </form>
