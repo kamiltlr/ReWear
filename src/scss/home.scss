@@ -707,4 +707,43 @@ body {
     border-bottom: 2px solid red;
     margin: 0;
   }
+
+  .logut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logout-text {
+    margin-top: 150px;
+  }
+
+  .logout-text h2 {
+    margin-bottom: 18px;
+    font-size: 2.2em;
+    font-weight: 400;
+    color: $black-color;
+    max-width: 500px;
+  }
+
+  .logout-text img {
+    width: 45%;
+    margin-bottom: 25px;
+  }
   
+  .home-btn {
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    left: 35%;
+    text-decoration: none;
+    max-width: 140px;
+    border: 1px solid $grey-color; 
+    color: $black-color; 
+    padding: 12px 4px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
+  }
