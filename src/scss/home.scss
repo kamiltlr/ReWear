@@ -521,7 +521,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: $white-color;
-    padding: 50px 20px;
+    padding: 55px 100px;
   }
 
   .login-email {
@@ -576,4 +576,21 @@ body {
     text-align: center;
     font-size: 1em;
     font-weight: 400;
+  }
+
+  .login-email .input-error-email {
+    border-bottom: 2px solid red;
+    margin: 0;
+  }
+  
+  .login-password .input-error-password {
+    border-bottom: 2px solid red;
+    margin: 0;
+  }
+  
+  
+  .login-error {
+    color: red;
+    font-size: 0.9em;
+    margin: 0;
   }
