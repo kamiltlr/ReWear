@@ -7,7 +7,7 @@ function HomeMain() {
             <div className='main-text'>
               <p>Zacznij pomagać!</p>
               <p>Oddaj niechciane rzeczy w zaufane ręce</p>
-              <img src="../public/assets/Decoration.svg" alt="decoration" />
+              <img src="../assets/Decoration.svg" alt="decoration" />
             </div>
 
             <div className="main-buttons">

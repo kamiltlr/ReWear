@@ -70,7 +70,7 @@ const Login = () => {
     <div className="login-container">
       <div className="login-text">
         <h2>Zaloguj się</h2>
-        <img src="../public/assets/Decoration.svg" alt="decoration" />
+        <img src="../assets/Decoration.svg" alt="decoration" />
       </div>
 
       <form onSubmit={handleFormSubmit}>

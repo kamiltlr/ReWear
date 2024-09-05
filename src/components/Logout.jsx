@@ -18,7 +18,7 @@ const Logout = () => {
     <div className='logut'>
         <div className='logout-text'>
             <h2>Wylogowanie nastąpiło pomyślnie!</h2>
-            <img src="../public/assets/Decoration.svg" alt="decoration" />
+            <img src="../assets/Decoration.svg" alt="decoration" />
             <Link to="/" className="home-btn">Strona główna</Link>
         </div>
       </div>

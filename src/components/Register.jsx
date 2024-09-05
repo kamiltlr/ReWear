@@ -79,7 +79,7 @@ const Register = () => {
     <div className="register-container">
       <div className="register-text">
         <h2>Załóż konto</h2>
-        <img src="../public/assets/Decoration.svg" alt="decoration" />
+        <img src="../assets/Decoration.svg" alt="decoration" />
       </div>
 
       <form onSubmit={handleFormSubmit}>
