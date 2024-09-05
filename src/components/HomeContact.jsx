@@ -94,13 +94,13 @@ const HomeContact = () => {
   return (
     <div id='contact' className='contact'>
       <div className='contact-img'>
-        <img src='/src/assets/Background-Contact-Form.jpg' alt='Background for contact form' />
+        <img src='../public/assets/Background-Contact-Form.jpg' alt='Background for contact form' />
       </div>
 
       <div className='contact-form'>
         <div className='contact-hero'>
           <h1>Skontaktuj się z nami</h1>
-          <img src='../src/assets/Decoration.svg' alt='decoration' />
+          <img src='../public/assets/Decoration.svg' alt='decoration' />
         </div>
 
         {success && <p className='form-success'>Wiadomość została wysłana! Wkrótce się skontaktujemy.</p>}
@@ -165,8 +165,8 @@ const HomeContact = () => {
             </div>
 
             <div className="footer-media">
-                <img src="./src/assets/facebook.svg" alt="facebook"/>
-                <img src="./src/assets/instagram.svg" alt="instagram"/>
+                <img src="./public/assets/facebook.svg" alt="facebook"/>
+                <img src="./public/assets/instagram.svg" alt="instagram"/>
             </div>
         </div>
       </footer>

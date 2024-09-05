@@ -74,7 +74,7 @@ function HomeWhoWeHelp() {
         <div id='foundation' className='foundation'>
             <div className="foundation-text">
                 <h1>Komu pomagamy?</h1>
-                <img src="../src/assets/Decoration.svg" alt="decoration" />
+                <img src="../public/assets/Decoration.svg" alt="decoration" />
             </div>
 
             <div className="foundation-buttons">
