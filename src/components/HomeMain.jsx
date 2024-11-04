@@ -11,10 +11,10 @@ function HomeMain() {
             </div>
 
             <div className="main-buttons">
-            <Link to="/login" className="login-button">
+            <Link to="/logowanie" className="login-button">
                 <button className='main-btn'>Oddaj rzeczy</button>
                 </Link>
-            <Link to="/register" className="login-button">
+            <Link to="/rejestracja" className="login-button">
                 <button className='main-btn'>Zorganizuj zbiórkę</button>
                 </Link>
             </div>

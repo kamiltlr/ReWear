@@ -40,7 +40,7 @@ function HomeSimpleStep() {
             </div>
 
             <div className="about-button">
-            <Link to="/login" className="login-button">
+            <Link to="/logowanie" className="login-button">
                 <button className='about-btn'>Oddaj rzeczy</button>
                 </Link>
             </div>    

@@ -165,8 +165,8 @@ const HomeContact = () => {
             </div>
 
             <div className="footer-media">
-                <img src="../assets/facebook.svg" alt="facebook"/>
-                <img src="../assets/instagram.svg" alt="instagram"/>
+                <img src="../assets/Facebook.svg" alt="facebook"/>
+                <img src="../assets/Instagram.svg" alt="instagram"/>
             </div>
         </div>
       </footer>
